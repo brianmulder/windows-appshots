@@ -19,7 +19,7 @@ function Get-Sha256([string] $Path) {
 
 function Assert-SupportedNode {
     $node = Get-Command node -ErrorAction SilentlyContinue
-    $guidance = "Node.js 22 or 24 LTS is required for the Windows AppShots MCP server (24 recommended). No Codex registration was changed. Install Node.js 24 LTS from https://nodejs.org/, then run this script again. The native AppShots helper does not need Node."
+    $guidance = "Node.js 22 or newer is required for the Windows AppShots MCP server. No Codex registration was changed. Install a current Node.js release from https://nodejs.org/, then run this script again. The native AppShots helper does not need Node."
     if (-not $node) {
         throw "Node was not found on PATH. $guidance"
     }
@@ -34,7 +34,7 @@ function Assert-SupportedNode {
     if ($exitCode -ne 0 -or $version -notmatch '^v?(\d+)\.') {
         throw "Node at '$($node.Source)' did not report a valid version. $guidance"
     }
-    if ([int] $Matches[1] -notin @(22, 24)) {
+    if ([int] $Matches[1] -lt 22) {
         throw "Found unsupported Node $version at '$($node.Source)'. $guidance"
     }
 }

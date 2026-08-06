@@ -51,6 +51,7 @@ try {
         Start-Sleep -Milliseconds 100
     }
     if ($hwnd -eq [IntPtr]::Zero) { throw "Fixture window did not become available" }
+    if (-not $fixture.WaitForInputIdle(5000)) { throw "Fixture window did not become ready" }
 
     $capture = Invoke-Native @(
         "capture-bounded", "--hwnd", $hwnd.ToInt64().ToString(), "--output", $bundle,

@@ -15,7 +15,7 @@ This is an independent community project. It is not an OpenAI product and is not
 ## Requirements
 
 - Windows 10 or 11 on x64;
-- [Node.js 22 or 24 LTS](https://nodejs.org/en/download), with Node 24 recommended;
+- [Node.js 22 or newer](https://nodejs.org/en/download);
 - Codex or the ChatGPT desktop app with local plugins enabled.
 
 Node runs only the MCP adapter. The native capture helper, watcher, hotkey, and tray do not need Node. End users do not need a .NET SDK.
