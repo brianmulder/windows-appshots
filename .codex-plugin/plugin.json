@@ -1,0 +1,34 @@
+{
+  "name": "windows-appshots",
+  "version": "0.1.0",
+  "description": "Capture a Windows application as pixels plus its Microsoft UI Automation semantics.",
+  "author": {
+    "name": "Brian Mulder",
+    "url": "https://github.com/brianmulder"
+  },
+  "homepage": "https://github.com/brianmulder/windows-appshots",
+  "repository": "https://github.com/brianmulder/windows-appshots",
+  "license": "MIT",
+  "keywords": ["windows", "accessibility", "uiautomation", "appshots"],
+  "interface": {
+    "displayName": "Windows AppShots",
+    "logo": "./assets/branding/app-icon-256.png",
+    "logoDark": "./assets/branding/app-icon-256.png",
+    "shortDescription": "Show Codex a Windows app, including accessible text.",
+    "longDescription": "MCP tools capture or retrieve a selected Windows application as a PNG, bounded UI Automation structure, bounded provider-exposed text, and a concise model-readable summary.",
+    "developerName": "Brian Mulder",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Local",
+      "Interactive"
+    ],
+    "websiteURL": "https://github.com/brianmulder/windows-appshots",
+    "defaultPrompt": [
+      "Capture the last Windows app I was using.",
+      "Use my latest Windows AppShot.",
+      "Inspect the current app's accessible controls."
+    ]
+  },
+  "mcpServers": "./.mcp.json"
+}

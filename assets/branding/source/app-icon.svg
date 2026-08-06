@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Windows AppShots</title>
+  <desc id="desc">A focused application window containing semantic accessibility rails.</desc>
+  <defs>
+    <linearGradient id="tile" x1="72" y1="48" x2="456" y2="472" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1730"/>
+      <stop offset="0.58" stop-color="#123A67"/>
+      <stop offset="1" stop-color="#155EEF"/>
+    </linearGradient>
+  </defs>
+  <rect x="16" y="16" width="480" height="480" rx="112" fill="url(#tile)"/>
+  <rect x="17" y="17" width="478" height="478" rx="111" fill="none" stroke="#75E2FF" stroke-opacity="0.24" stroke-width="2"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="112" y="132" width="288" height="240" rx="42" stroke="#F4F8FF" stroke-width="25"/>
+    <path d="M116 204H396" stroke="#F4F8FF" stroke-width="25"/>
+    <path d="M184 265H326M184 326H346" stroke="#42D4FF" stroke-width="22"/>
+    <path d="M347 99H420V172" stroke="#42D4FF" stroke-width="24"/>
+  </g>
+  <g fill="#F4F8FF">
+    <circle cx="155" cy="168" r="9"/>
+    <circle cx="185" cy="168" r="9"/>
+    <circle cx="215" cy="168" r="9"/>
+  </g>
+  <g fill="#42D4FF">
+    <circle cx="151" cy="265" r="13"/>
+    <circle cx="151" cy="326" r="13"/>
+  </g>
+</svg>

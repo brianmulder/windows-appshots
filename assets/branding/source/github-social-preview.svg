@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
+  <title id="title">Windows AppShots</title>
+  <desc id="desc">Show Codex a Windows app with pixels and UI Automation context.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1280" y2="640" gradientUnits="userSpaceOnUse"><stop stop-color="#07111F"/><stop offset="0.62" stop-color="#0B2342"/><stop offset="1" stop-color="#123A67"/></linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="translate(1040 80) rotate(135) scale(520 360)" gradientUnits="userSpaceOnUse"><stop stop-color="#155EEF" stop-opacity="0.55"/><stop offset="1" stop-color="#155EEF" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1280" height="640" rx="36" fill="url(#bg)"/>
+  <rect width="1280" height="640" rx="36" fill="url(#glow)"/>
+  <g transform="translate(92 112)">
+    <rect width="416" height="416" rx="96" fill="#0B1730" stroke="#42D4FF" stroke-opacity="0.28" stroke-width="3"/>
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="86" y="108" width="244" height="204" rx="34" stroke="#F4F8FF" stroke-width="22"/>
+      <path d="M90 169H326" stroke="#F4F8FF" stroke-width="22"/>
+      <path d="M148 220H256M148 271H273" stroke="#42D4FF" stroke-width="19"/>
+      <path d="M280 79H350V149" stroke="#42D4FF" stroke-width="21"/>
+    </g>
+    <g fill="#42D4FF"><circle cx="122" cy="220" r="11"/><circle cx="122" cy="271" r="11"/></g>
+  </g>
+  <g font-family="Segoe UI, Inter, Arial, sans-serif">
+    <text x="566" y="270" fill="#F4F8FF" font-size="74" font-weight="700" letter-spacing="-2">Windows AppShots</text>
+    <text x="570" y="338" fill="#A9C8E8" font-size="31" font-weight="400">Show Codex a Windows app</text>
+    <text x="570" y="386" fill="#42D4FF" font-size="29" font-weight="600">pixels + UI Automation context</text>
+  </g>
+</svg>

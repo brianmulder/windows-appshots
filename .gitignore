@@ -1,0 +1,12 @@
+*.log
+*.pdb
+/bin/AppshotCapture.exe
+/bin/AppshotCapture.exe.config
+/tests/FixtureWindow.exe
+/dist/
+/.tools/
+/.test-tmp/
+/native/obj/
+/native/bin/
+.DS_Store
+Thumbs.db

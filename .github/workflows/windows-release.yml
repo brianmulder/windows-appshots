@@ -1,0 +1,79 @@
+name: Windows release gate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-test-installer:
+    runs-on: windows-2025
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: "24"
+
+      - name: Set up exact .NET SDK
+        uses: actions/setup-dotnet@67a3573c9a986a3f9c594539f4ab511d57bb3ce9 # v4
+        with:
+          dotnet-version: "10.0.302"
+
+      - name: Install exact build tools
+        shell: pwsh
+        run: |
+          choco install nsis --version=3.12.0 --yes --no-progress
+          if ($LASTEXITCODE -notin @(0, 3010)) {
+            throw "Chocolatey could not install NSIS 3.12.0 (exit $LASTEXITCODE)."
+          }
+
+          npm install --global @openai/codex@0.145.0
+          if ($LASTEXITCODE -ne 0) { throw "Could not install Codex CLI 0.145.0." }
+
+          if ((dotnet --version).Trim() -ne "10.0.302") {
+            throw "The active .NET SDK is not 10.0.302."
+          }
+          if ((codex --version).Trim() -ne "codex-cli 0.145.0") {
+            throw "The active Codex CLI is not 0.145.0."
+          }
+
+      - name: Build and test release installer
+        shell: pwsh
+        run: npm run verify:release
+
+      - name: Verify build receipt
+        shell: pwsh
+        run: |
+          $receipt = Get-Content -Raw dist\BUILD-RECEIPT.json | ConvertFrom-Json
+          if ($receipt.sourceCommit -ne "${{ github.sha }}") {
+            throw "Build receipt commit $($receipt.sourceCommit) does not match ${{ github.sha }}."
+          }
+          if ($receipt.sourceDirty -ne $false) { throw "Release build used a dirty source tree." }
+          if ($receipt.tools.dotnetSdk -ne "10.0.302") { throw "Unexpected .NET SDK receipt." }
+          if ($receipt.tools.nsis -ne "3.12") { throw "Unexpected NSIS receipt." }
+
+          "### Windows release receipt" >> $env:GITHUB_STEP_SUMMARY
+          "" >> $env:GITHUB_STEP_SUMMARY
+          Get-Content dist\SHA256SUMS.txt | ForEach-Object {
+            "- ``$_``" >> $env:GITHUB_STEP_SUMMARY
+          }
+
+      - name: Upload exact release artifacts
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: windows-appshots-${{ github.sha }}
+          if-no-files-found: error
+          retention-days: 30
+          path: |
+            dist/WindowsAppShots-Setup-0.1.0.exe
+            dist/SHA256SUMS.txt
+            dist/BUILD-RECEIPT.json

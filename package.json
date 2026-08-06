@@ -1,0 +1,17 @@
+{
+  "name": "windows-appshots",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/build.ps1",
+    "build:installer": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/build-installer.ps1",
+    "test": "node --test ./tests/*.test.mjs",
+    "test:native": "powershell -NoProfile -ExecutionPolicy Bypass -File ./tests/native-e2e.ps1",
+    "test:installer-reproducibility": "powershell -NoProfile -ExecutionPolicy Bypass -File ./tests/installer-reproducibility.ps1",
+    "test:installer": "powershell -NoProfile -ExecutionPolicy Bypass -File ./tests/installer-e2e.ps1",
+    "verify": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/verify.ps1",
+    "verify:release": "npm run verify && npm run build:installer && npm run test:installer-reproducibility && npm run test:installer"
+  }
+}

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" role="img" aria-label="Windows AppShots">
+  <g transform="translate(20 20)">
+    <rect width="280" height="280" rx="64" fill="#0B1730"/>
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="58" y="72" width="164" height="138" rx="23" stroke="#F4F8FF" stroke-width="15"/><path d="M61 113H219" stroke="#F4F8FF" stroke-width="15"/><path d="M100 148H172M100 183H184" stroke="#42D4FF" stroke-width="13"/><path d="M187 52H234V99" stroke="#42D4FF" stroke-width="14"/></g><g fill="#42D4FF"><circle cx="83" cy="148" r="7"/><circle cx="83" cy="183" r="7"/></g>
+  </g>
+  <g font-family="Segoe UI, Inter, Arial, sans-serif"><text x="350" y="145" fill="#10233D" font-size="82" font-weight="700" letter-spacing="-2">Windows AppShots</text><text x="354" y="210" fill="#49657F" font-size="30">Pixels plus UI Automation context</text></g>
+</svg>
