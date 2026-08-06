@@ -33,7 +33,7 @@ New-Item -ItemType Directory -Force -Path (Join-Path $pluginRoot "dist") | Out-N
 & $compiler /WX /V2 (Join-Path $pluginRoot "installer\WindowsAppShots.nsi")
 if ($LASTEXITCODE -ne 0) { throw "Installer build failed with exit code $LASTEXITCODE" }
 
-$installer = Join-Path $pluginRoot "dist\WindowsAppShots-Setup-0.1.0.exe"
+$installer = Join-Path $pluginRoot "dist\WindowsAppShots-Setup-0.1.1.exe"
 if (-not (Test-Path -LiteralPath $installer)) { throw "Installer output is missing: $installer" }
 $native = Join-Path $pluginRoot "bin\AppshotCapture.exe"
 $installerHash = Get-Sha256 $installer
@@ -45,7 +45,7 @@ $dotnet = Join-Path $pluginRoot ".tools\dotnet\dotnet.exe"
 if (-not (Test-Path $dotnet)) { $dotnet = (Get-Command dotnet).Source }
 $receipt = [ordered]@{
     schema = "windows-appshots/release-build-v1"
-    version = "0.1.0"
+    version = "0.1.1"
     sourceCommit = $sourceCommit
     sourceTree = $sourceTree
     sourceDirty = $sourceDirty
@@ -55,13 +55,13 @@ $receipt = [ordered]@{
     }
     artifacts = [ordered]@{
         nativeHelper = [ordered]@{ file = "AppshotCapture.exe"; sha256 = $nativeHash; bytes = (Get-Item $native).Length }
-        installer = [ordered]@{ file = "WindowsAppShots-Setup-0.1.0.exe"; sha256 = $installerHash; bytes = (Get-Item $installer).Length; signing = "unsigned" }
+        installer = [ordered]@{ file = "WindowsAppShots-Setup-0.1.1.exe"; sha256 = $installerHash; bytes = (Get-Item $installer).Length; signing = "unsigned" }
     }
 }
 $receipt | ConvertTo-Json -Depth 6 | Set-Content -LiteralPath (Join-Path $pluginRoot "dist\BUILD-RECEIPT.json") -Encoding UTF8
 @(
     "$nativeHash  AppshotCapture.exe",
-    "$installerHash  WindowsAppShots-Setup-0.1.0.exe"
+    "$installerHash  WindowsAppShots-Setup-0.1.1.exe"
 ) | Set-Content -LiteralPath (Join-Path $pluginRoot "dist\SHA256SUMS.txt") -Encoding ASCII
 Write-Output "Built $installer"
 Write-Output "SHA256 $installerHash"

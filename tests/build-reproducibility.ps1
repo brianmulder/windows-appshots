@@ -49,7 +49,7 @@ try {
     }
 
     $version = (Get-Item -LiteralPath $firstExe).VersionInfo
-    if ($version.FileVersion -ne "0.1.0.0" -or $version.ProductName -ne "Windows AppShots") {
+    if ($version.FileVersion -ne "0.1.1.0" -or $version.ProductName -ne "Windows AppShots") {
         throw "Native helper version metadata is missing or incorrect"
     }
     $subsystem = Get-PeSubsystem $firstExe

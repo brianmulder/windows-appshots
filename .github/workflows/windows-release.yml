@@ -74,6 +74,6 @@ jobs:
           if-no-files-found: error
           retention-days: 30
           path: |
-            dist/WindowsAppShots-Setup-0.1.0.exe
+            dist/WindowsAppShots-Setup-0.1.1.exe
             dist/SHA256SUMS.txt
             dist/BUILD-RECEIPT.json

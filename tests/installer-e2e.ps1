@@ -1,6 +1,6 @@
 $ErrorActionPreference = "Stop"
 $pluginRoot = Split-Path -Parent $PSScriptRoot
-$installer = Join-Path $pluginRoot "dist\WindowsAppShots-Setup-0.1.0.exe"
+$installer = Join-Path $pluginRoot "dist\WindowsAppShots-Setup-0.1.1.exe"
 $sourceExe = Join-Path $pluginRoot "bin\AppshotCapture.exe"
 $compiler = Join-Path $env:WINDIR "Microsoft.NET\Framework64\v4.0.30319\csc.exe"
 $nodeExe = (Get-Command node.exe -ErrorAction Stop).Source
@@ -72,7 +72,7 @@ try {
     if (-not ($marketplaces | Where-Object { $_.name -eq "windows-appshots" })) {
         throw "Installer registration did not add its isolated marketplace"
     }
-    $cachedPluginRoot = Join-Path $codexHome "plugins\cache\windows-appshots\windows-appshots\0.1.0"
+    $cachedPluginRoot = Join-Path $codexHome "plugins\cache\windows-appshots\windows-appshots\0.1.1"
     $cachedPluginManifest = Get-Content -LiteralPath (Join-Path $cachedPluginRoot ".codex-plugin\plugin.json") -Raw | ConvertFrom-Json
     if ($null -ne $cachedPluginManifest.skills -or
         -not $cachedPluginManifest.mcpServers -or

@@ -12,7 +12,7 @@ function Get-Sha256([string] $Path) {
 
 $pluginRoot = Split-Path -Parent $PSScriptRoot
 $buildScript = Join-Path $pluginRoot "scripts\build-installer.ps1"
-$installer = Join-Path $pluginRoot "dist\WindowsAppShots-Setup-0.1.0.exe"
+$installer = Join-Path $pluginRoot "dist\WindowsAppShots-Setup-0.1.1.exe"
 $timestampProbe = Join-Path $pluginRoot "README.md"
 
 if (-not (Test-Path -LiteralPath $installer)) { throw "Installer is missing: $installer" }

@@ -2,7 +2,7 @@
 
 ## Current status
 
-Windows AppShots 0.1.0 is an unsigned bootstrap release. Windows may show an unknown-publisher warning.
+Windows AppShots releases are currently unsigned. Windows may show an unknown-publisher warning.
 
 The release includes a SHA-256 checksum and machine-readable build receipt. GitHub Actions builds and tests the installer from the exact release source.
 

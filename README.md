@@ -22,7 +22,7 @@ Node runs only the MCP adapter. The native capture helper, watcher, hotkey, and 
 
 ## Install
 
-Download `WindowsAppShots-Setup-0.1.0.exe` from the GitHub release and run it. The per-user installer does not require administrator access.
+Download `WindowsAppShots-Setup-0.1.1.exe` from the latest GitHub release and run it. The per-user installer does not require administrator access.
 
 The installer can:
 

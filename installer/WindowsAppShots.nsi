@@ -7,7 +7,7 @@ Unicode True
 !include "x64.nsh"
 
 !define APP_NAME "Windows AppShots"
-!define APP_VERSION "0.1.0"
+!define APP_VERSION "0.1.1"
 !define APP_PUBLISHER "Brian Mulder"
 !define APP_ID "WindowsAppShots"
 !define SOURCE_ROOT ".."
@@ -26,7 +26,7 @@ BrandingText "${APP_NAME}"
 Icon "${SOURCE_ROOT}\assets\branding\windows\windows-appshots.ico"
 UninstallIcon "${SOURCE_ROOT}\assets\branding\windows\windows-appshots.ico"
 
-VIProductVersion "0.1.0.0"
+VIProductVersion "0.1.1.0"
 VIAddVersionKey /LANG=1033 "ProductName" "${APP_NAME}"
 VIAddVersionKey /LANG=1033 "CompanyName" "${APP_PUBLISHER}"
 VIAddVersionKey /LANG=1033 "FileDescription" "${APP_NAME} installer"
