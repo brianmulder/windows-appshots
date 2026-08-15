@@ -14,8 +14,8 @@
     "displayName": "Windows AppShots",
     "logo": "./assets/branding/app-icon-256.png",
     "logoDark": "./assets/branding/app-icon-256.png",
-    "shortDescription": "Show Codex a Windows app, including accessible text.",
-    "longDescription": "MCP tools capture or retrieve a selected Windows application as a PNG, bounded UI Automation structure, bounded provider-exposed text, and a concise model-readable summary.",
+    "shortDescription": "Save a semantic AppShot with pixels and accessible text.",
+    "longDescription": "MCP tools explicitly capture or retrieve a persisted Windows AppShot: a PNG, bounded UI Automation structure, bounded provider-exposed text, and a concise model-readable summary. AppShots are evidence bundles, not live computer-use screenshots or actions.",
     "developerName": "Brian Mulder",
     "category": "Productivity",
     "capabilities": [
@@ -25,9 +25,9 @@
     ],
     "websiteURL": "https://github.com/brianmulder/windows-appshots",
     "defaultPrompt": [
-      "Capture the last Windows app I was using.",
+      "Capture an AppShot of the last Windows app I was using.",
       "Use my latest Windows AppShot.",
-      "Inspect the current app's accessible controls."
+      "Save an AppShot with the current app's accessible controls."
     ]
   },
   "mcpServers": "./.mcp.json"

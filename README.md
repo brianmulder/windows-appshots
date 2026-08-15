@@ -8,7 +8,14 @@
   <a href="https://github.com/brianmulder/windows-appshots/releases/latest"><img src="https://img.shields.io/github/v/release/brianmulder/windows-appshots?display_name=tag" alt="Latest release"></a>
 </p>
 
-Windows AppShots lets Codex inspect one Windows application as pixels plus a bounded Microsoft UI Automation tree and provider-exposed text.
+Windows AppShots persists an explicit semantic checkpoint of one Windows
+application as pixels plus a bounded Microsoft UI Automation tree and
+provider-exposed text.
+
+An AppShot is reusable evidence, not a desktop actuator and not the low-latency
+screenshot surface for a live computer-use action loop. Use a computer-use
+driver for fresh state and actions; request an AppShot when the result should be
+saved, retrieved later, or inspected as a bounded semantic bundle.
 
 This is an independent community project. It is not an OpenAI product and is not endorsed or supported by OpenAI. Brian Mulder built it with assistance from OpenAI Codex.
 
